@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Electricity Billing Application - Registration Form</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container h-100" style="background-color: #8fc4b7;">
+
+        <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
+            <img src="assets/img/hero-img.png" class="img-fluid animated" alt="">
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="col-6">
+
+                    <h2 class="text-center fw-bold">User Registration</h2>
+                    <div class="row d-flex justify-content-center align-items-center">
+
+                        <form>
+
+                            <div class="form-group">
+                                <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                                <label for="username">Username:</label>
+                                <input type="text" class="form-control" id="username" placeholder="Enter username"
+                                    maxlength="16" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email:</label>
+                                <input type="email" class="form-control" id="email" placeholder="Enter email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password:</label>
+                                <input type="password" class="form-control" id="password" placeholder="Enter password"
+                                    maxlength="16" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="gender">Gender:</label>
+                                <select class="form-control" id="gender">
+                                    <option value="">Select gender</option>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                    <option value="nonbinary">Transgender</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="state">State:</label>
+                                <select class="form-control" id="state">
+                                    <option value="">Select state</option>
+                                    <option value="Maharashtra">Maharashtra</option>
+                                    <option value="Goa">Goa</option>
+                                    <option value="Gujrat">Gujrat</option>
+                                    <option value="Karnataka">Karnataka</option>
+                                    <option value="Delhi">Karnataka</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="city">City:</label>
+                                <select class="form-control" id="city">
+                                    <option value="">Select city</option>
+                                    <option value="city1">Pune</option>
+                                    <option value="city2">Mumbai</option>
+                                    <option value="city2">Ahmedabad</option>
+                                    <option value="city2">Vadodara</option>
+                                    <option value="city2">Nashik</option>
+                                    <option value="city2">Navi-Mumbai</option>
+
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="address">Permanent Address:</label>
+                                <textarea class="form-control" id="address"
+                                    placeholder="Enter permanent address"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="dob">Date of Birth:</label>
+                                <input type="date" class="form-control" id="dob" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="maritalStatus">Marital Status:</label>
+                                <select class="form-control" id="maritalStatus">
+                                    <option value="">Select marital status</option>
+                                    <option value="single">Single</option>
+                                    <option value="married">Married</option>
+                                    <option value="divorced">Divorced</option>
+                                    <option value="widowed">Widowed</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="requiredload">Required Load</label>
+                                <select class="form-control" id="requiredload">
+                                    <option value="">Select The type of load</option>
+                                    <option value="Single Phase">Single Phase</option>
+                                    <option value="Three Phase">Three Phae</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="ConnectionType">Connection Type</label>
+                                <select class="form-control" id="ConnectionType">
+                                    <option value="">Select The type of Connection type</option>
+                                    <option value="Commercial">Single Phase</option>
+                                    <option value="Non Commercial">Three Phae</option>
+                                </select>
+                            </div>
+                            <div class="form-check mx-4">
+                                <input class="form-check-input me-2" type="checkbox" value="" id="terms" />
+                                <label class="form-check-label" for="terms">
+                                    I agree all statements in <a href="#!">Terms of service</a>
+                                </label>
+                            </div>
+                            <a href="index.html" class="btn btn-primary">Previous</a>
+                            <a href="1.html" class="btn btn-success">Submit</a>
+
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+
+    function caclculateAge(event) {
+        event.caclculateAge();
+        const ageInput = document.getElementById('dob');
+        const age = parseInt(ageInput.value);
+        if (age > 18) {
+            alert("your age must be greater than 18)");
+            ageInput.value = '';
+            ageInput.focus();
+            return;
+        }
+        alert('Form submitted successfully!');
+    }
+</script>
+
+</html>
