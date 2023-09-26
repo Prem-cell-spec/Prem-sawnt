@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration</title>
+    <!-- Link to Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Link to Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        /* Custom CSS for the registration page */
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .registration-form {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .registration-image {
+            width: 100%;
+            height: 100%;
+            /* Set the image height to 100% of its container */
+            object-fit: cover;
+            /* Maintain aspect ratio while covering the container */
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container mt-5">
+        <div class="row">
+            <!-- Registration Form -->
+            <div class="col-md-6">
+                <h2>Register</h2>
+                <form id="registrationForm">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" class="form-control" id="username" name="username" required>
+                        <small id="usernameError" class="text-danger"></small>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                        <small id="emailError" class="text-danger"></small>
+                    </div>
+                    <div class="form-group">
+                        <label for="age">Age</label>
+                        <input type="number" class="form-control" id="age" name="age" required>
+                        <small id="ageError" class="text-danger"></small>
+                    </div>
+                    <div class="form-group">
+                        <label for="mobile">Mobile</label>
+                        <input type="tel" class="form-control" id="mobile" name="mobile" required>
+                        <small id="mobileError" class="text-danger"></small>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" id="password" name="password" required>
+                        <small id="passwordError" class="text-danger"></small>
+                    </div>
+                    <div class="form-group">
+                        <label for="repassword">Re-enter Password</label>
+                        <input type="password" class="form-control" id="repassword" name="repassword" required>
+                        <small id="repasswordError" class="text-danger"></small>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Register</button>
+                </form>
+            </div>
+            <!-- Image Section -->
+            <div class="col-md-6">
+                <div class="registration-image-container">
+                    <img src="https://www.pinclipart.com/picdir/big/531-5310574_custom-software-development-service-clipart.png"
+                        alt="Registration Image" class="img-fluid registration-image">
+                </div>
+            </div>
+        </div>
+
+        <!-- Link to Bootstrap JS and jQuery (at the end of the body for faster page loading) -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <!-- Custom JavaScript for validation -->
+        <!-- ... previous code ... -->
+
+<script>
+      let usersArray = JSON.parse(localStorage.getItem('users')) || [];
+    document.getElementById('registrationForm').addEventListener('submit', function (event) {
+        event.preventDefault();
+        // Clear previous error messages
+        clearErrors();
+
+        // Validation functions
+        const username = document.getElementById('username').value;
+        const email = document.getElementById('email').value;
+        const age = document.getElementById('age').value;
+        const mobile = document.getElementById('mobile').value;
+        const password = document.getElementById('password').value;
+        const repassword = document.getElementById('repassword').value;
+
+        const usernamePattern = /^emp\d{4}$/;
+        const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+        const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
+        let isValid = true;
+
+        if (!usernamePattern.test(username)) {
+            document.getElementById('usernameError').textContent = "Username must start with 'emp' followed by four digits.";
+            isValid = false;
+        }
+
+        if (!emailPattern.test(email)) {
+            document.getElementById('emailError').textContent = "Invalid email format.";
+            isValid = false;
+        }
+
+        if (age < 18) {
+            document.getElementById('ageError').textContent = "Age must be 18 or older.";
+            isValid = false;
+        }
+
+        if (isNaN(mobile) || mobile.length !== 10) {
+            document.getElementById('mobileError').textContent = "Invalid mobile number.";
+            isValid = false;
+        }
+
+        if (!passwordPattern.test(password)) {
+            document.getElementById('passwordError').textContent = "Password must be at least 8 characters long and include a combination of uppercase, lowercase, digits, and special characters.";
+            isValid = false;
+        }
+
+        if (password !== repassword) {
+            document.getElementById('repasswordError').textContent = "Passwords do not match.";
+            isValid = false;
+        }
+
+        if (isValid) {
+            // Create a user object
+            const user = {
+                username,
+                email,
+                age,
+                mobile,
+                role: 'user', // Default role
+                password
+            };
+
+            // Push the user object into the usersArray
+            usersArray.push(user);
+
+            // Store the usersArray in local storage
+            localStorage.setItem('users', JSON.stringify(usersArray));
+
+            // Clear the form
+            document.getElementById('registrationForm').reset();
+
+            // Alert for successful registration
+            alert('Registration successful. You can now log in.');
+            window.location.href = 'login.html';
+        }
+    });
+
+    // Function to clear error messages
+    function clearErrors() {
+        const errorElements = document.querySelectorAll('.text-danger');
+        errorElements.forEach(function (element) {
+            element.textContent = '';
+        });
+    }
+</script>
+</body>
+</html>
+
+</body>
+
+</html>

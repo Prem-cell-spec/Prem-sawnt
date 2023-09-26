@@ -1,0 +1,73 @@
+[
+    {
+        "id": 1,
+        "category": "Coins",
+        "image": "images/1.jpeg",
+        "startDate": "2023-10-01",
+        "endDate": "2023-10-10",
+        "auctionType": "Reserve Price",
+        "isAuctionLive": true,
+        "isAuctionClosed": false,
+        "openingDate": "2023-10-01",
+        "closingDate": "2023-10-10",
+        "description": "Rare gold coin from the 18th century.",
+        "currentBid": 1000
+    },
+    {
+        "id": 2,
+        "category": "Notes",
+        "image": "images/2.jpeg",
+        "startDate": "2023-09-25",
+        "endDate": "2023-10-05",
+        "auctionType": "No Reserve",
+        "isAuctionLive": true,
+        "isAuctionClosed": false,
+        "openingDate": "2023-09-25",
+        "closingDate": "2023-10-05",
+        "description": "Historical banknote collection.",
+        "currentBid": 500
+    },
+    {
+        "id": 2,
+        "category": "Notes",
+        "image": "images/2.jpeg",
+        "startDate": "2023-09-25",
+        "endDate": "2023-10-05",
+        "auctionType": "No Reserve",
+        "isAuctionLive": true,
+        "isAuctionClosed": false,
+        "openingDate": "2023-09-25",
+        "closingDate": "2023-10-05",
+        "description": "Historical banknote collection.",
+        "currentBid": 500
+    },
+    {
+        "id": 2,
+        "category": "Notes",
+        "image": "images/2.jpeg",
+        "startDate": "2023-09-25",
+        "endDate": "2023-10-05",
+        "auctionType": "No Reserve",
+        "isAuctionLive": true,
+        "isAuctionClosed": false,
+        "openingDate": "2023-09-25",
+        "closingDate": "2023-10-05",
+        "description": "Historical banknote collection.",
+        "currentBid": 500
+    },
+    {
+        "id": 2,
+        "category": "Notes",
+        "image": "images/2.jpeg",
+        "startDate": "2023-09-25",
+        "endDate": "2023-10-05",
+        "auctionType": "No Reserve",
+        "isAuctionLive": true,
+        "isAuctionClosed": false,
+        "openingDate": "2023-09-25",
+        "closingDate": "2023-10-05",
+        "description": "Historical banknote collection.",
+        "currentBid": 500
+    }
+    
+]

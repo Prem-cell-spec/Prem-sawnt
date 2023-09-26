@@ -1,0 +1,13 @@
+/* Custom CSS for the landing page */
+.navbar {
+    background-color: #343a40; /* Dark background color for the navigation bar */
+}
+.navbar-dark .navbar-nav .nav-link {
+    color: #ffffff; /* Text color for navigation links */
+}
+.jumbotron {
+    background-image: url('https://th.bing.com/th/id/OIP.tbw1erk_7sew_lFIbZmNAQHaDW?pid=ImgDet&rs=1'); /* Replace 'background-image.jpg' with your image */
+    background-size: cover; /* Cover the entire viewport */
+    background-position: 100%; /* Center the background image */
+    color: #ffffff; /* Text color for the jumbotron content */
+}
